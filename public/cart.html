@@ -47,11 +47,18 @@
                </table>
   
       <h4>Bill: {{amount}}</h4>
-      <center>    <span class="navbar-text">
+      <center>    <span class="navbar-text">       
+        <form action="/products" method = "get">
+          <button class="btn btn-dark" type="submit" role="button">ALL PRODUCTS</button>
+        </form>
+        <form action="/addProduct" method = "get">
+          <button class="btn btn-dark" type="submit" role="button">ADD PRODUCT</button>
+        </form>
+       
+        <form action="/logout" method = "get">
+        <button class="btn btn-dark" type="submit" role="button">LOGOUT</button>
+      </form>
 
-        <a class="btn btn-primary" href="products.html" role="button">All Products</a>
-        
-        <a class="btn btn-dark" href="/" role="button">Add Product</a>
       </span>
       </center>
     </div>

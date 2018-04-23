@@ -13,15 +13,19 @@ route.get('/signin',(req,res)=>{
   route.get('/products',(req,res)=>{
       res.sendFile('products.html',{root:'./public'})
   })
-
+route.get('/addProduct', (req, res) => {
+  res.sendFile('index.html', {root: './public'});
+});
 
 route.get('/cart',(req,res)=>{
   if(req.user)
   res.sendFile('cart.html',{root:'./public'})
-  else
-  res.sendFile('signin.html',{root:'./public'})
-  
-  
+  else res.redirect('/signin');  
+})
+
+route.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/products');
 })
 
  

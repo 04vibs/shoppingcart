@@ -27,17 +27,25 @@
                              <div class="card-body text-center">
                                <h3 class="card-text">{{product.name}}</h3>
                                 <p class="card-text">Rs.{{product.price}}</p>
+                                
                                 <button  @click="addToCart(product)" class="btn btn-success btn-sm">Add to cart</button>
+
                              </div>
                            </div>
                        </div>
                    </div>
                    
                    <center>    <span class="navbar-text">
+                    <form action="/cart" method="get">
 
-                    <a class="btn btn-primary" href="cart.html" role="button">View Cart</a>
+                      <button class="btn btn-primary" role="button">View Cart</button>
+                    </form>
+                    <form action="/addProduct" method="get">
+
+                      <button class="btn btn-primary" role="button">ALL PRODUCTS</button>
+                    </form>
                     
-                    <a class="btn btn-dark" href="/" role="button">Add Product</a>
+                    
                   </span>
                   </center>
                  </div>
