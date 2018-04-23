@@ -21,6 +21,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a550cbc2d5fb8f6f168ad18523c0c6baf6046d2
 app.use('/api', require('./routes/api'))
 
 
