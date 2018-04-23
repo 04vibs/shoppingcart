@@ -10,5 +10,11 @@ route.get('/signin',(req,res)=>{
     res.sendFile('/signup.html',{root:'./public'})
   })
 
+  route.get('/products',(req,res)=>{
+      res.sendFile('/products.html',{root:'./public'})
+  })
+  
+ 
+
 
   module.exports=route;

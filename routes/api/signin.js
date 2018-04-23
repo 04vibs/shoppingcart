@@ -13,7 +13,7 @@ route.get('/',function(req,res){
 // })
 route.post('/', passport.authenticate('local', {
     failureRedirect: '/signin.html',
-    successRedirect: '/cart'
+    successRedirect: '/products'
 }))
 
 

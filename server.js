@@ -20,16 +20,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-
-
-// app.use('/signin',(req,res)=>{
-//   res.sendFile('/public/signin.html',{root:__dirname})
-// })
-
-// app.use('/signup',(req,res)=>{
-//   res.sendFile('/public/signup.html',{root:__dirname})
-// })
-
 app.use('/', express.static(path.join(__dirname, 'public')))
 
 
