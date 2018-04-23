@@ -3,7 +3,15 @@ const Cart= require('../../db').Cart;
 const Product = require('../../db').Product;
 
 route.get('/', (request, response) => {
-  Cart.findAll()
+  // Cart.findAll()
+  //         .then((products) => response.status(200).send(products))
+  //         .catch((err) => response.status(400).send("No products found..."))
+
+          Cart.findAll({
+            where:{
+              userId:request.user.id
+            }
+          })
           .then((products) => response.status(200).send(products))
           .catch((err) => response.status(400).send("No products found..."))
 })
@@ -17,6 +25,7 @@ route.post('/:id', (request, response) => {
           .then((product) => {
             Cart.create({
               productId: request.params.id,
+              userId: request.user.id,
               name: product.name,
               price: product.price
             }).then((added) => {
