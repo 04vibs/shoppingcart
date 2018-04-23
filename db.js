@@ -73,6 +73,7 @@ const User=db.define('user',{
 
 Product.belongsTo(Vendor, {foreignKey: 'manufacturerId'})
 Cart.belongsTo(Product, {foreignKey: 'productId'});
+Cart.belongsTo(User,{foreignKey:'userId'})
 db.sync().then(() => console.log("Database created successfully."));
 
 
