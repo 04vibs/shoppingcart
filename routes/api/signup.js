@@ -1,12 +1,12 @@
 const route = require('express').Router();
 const User = require('../../db').User;
 const passport=require('../../passport');
-
-route.get('/signin',function(req,res){
+// console.log("singin fesfdkfjgsdfkdsfgdsk")
+route.get('/',function(req,res){
+    console.log("in get ")
     res.sendFile('../../public/signin.html')
-})
-route.get('/signup',function(req,res){
-    res.sendFile('../../public/singup.html')
+    
+
 })
 
 route.post('/signin', passport.authenticate('local', {
@@ -14,13 +14,14 @@ route.post('/signin', passport.authenticate('local', {
     successRedirect: '/products'
 }))
 
-route.post('/signup',(req,res)=>{
+route.post('/',(req,res)=>{
+    console.log("fsadfdslfjdhsg dksjgfdhsbkgjds bgksd b")
     User.create({
         username:req.body.username,
         password:req.body.password
     }).then((user)=>{
         if(user){
-            res.redirect('signin.html')
+            res.redirect('/signin.html')
         }
     }).catch((err)=>
         res.send("Error creating user")
