@@ -22,19 +22,19 @@ app.use(passport.session())
 
 
 
-app.use('/signin',(req,res)=>{
-  res.sendFile('/public/signin.html',{root:__dirname})
-})
+// app.use('/signin',(req,res)=>{
+//   res.sendFile('/public/signin.html',{root:__dirname})
+// })
 
-app.use('/signup',(req,res)=>{
-  res.sendFile('/public/signup.html',{root:__dirname})
-})
+// app.use('/signup',(req,res)=>{
+//   res.sendFile('/public/signup.html',{root:__dirname})
+// })
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 app.use('/api', require('./routes/api'))
-
+app.use('/',require('./routes/pages'))
 
 app.listen(8181, () => {
   console.log("Server started at localhost:8181")
