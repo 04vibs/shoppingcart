@@ -47,6 +47,7 @@ route.post('/dec/:id', (request, response) => {
     })
   });
 })
+
 route.post('/inc/:id', (request, response) => {
   Cart.findOne({
     where: {

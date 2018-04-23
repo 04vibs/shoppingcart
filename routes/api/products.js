@@ -24,7 +24,7 @@ route.post('/filter', (request, response) => {
        })
     })
   })
-route.post('/', (request, response) => {
+ route.post('/', (request, response) => {
   if(!request.body.manufacturer || !request.body.price || !request.body.name)
       return response.status(400).send({error: "Provide a manufacturer name and product price"});
   Vendor.findOne({

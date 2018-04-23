@@ -13,7 +13,15 @@ route.get('/signin',(req,res)=>{
   route.get('/products',(req,res)=>{
       res.sendFile('/products.html',{root:'./public'})
   })
-  
+
+
+route.get('/cart',(req,res)=>{
+  if(!req.user)
+  res.sendFile('/signin.html',{root:'./public'})
+  else
+  res.sendFile('/cart.html',{root:'./public'})
+})
+
  
 
 
