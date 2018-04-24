@@ -3,10 +3,7 @@ const Cart= require('../../db').Cart;
 const Product = require('../../db').Product;
 
 route.get('/', (request, response) => {
-  // Cart.findAll()
-  //         .then((products) => response.status(200).send(products))
-  //         .catch((err) => response.status(400).send("No products found..."))
-
+ 
           Cart.findAll({
             where:{
               userId:request.user.id
@@ -17,6 +14,11 @@ route.get('/', (request, response) => {
 })
 
 route.post('/:id', (request, response) => {
+  if(!request.user)
+  {
+    response.status(449).send("Please login first ")
+  }
+  else
   Product.findOne({
     where: {
       id: request.params.id

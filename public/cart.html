@@ -82,8 +82,11 @@
         fetchCartProducts: function () {
           let app = this
           axios.get('http://localhost:8181/api/cart').then((response) => {
+            
             app.products = response.data
             this.calculateAmount();
+          }).catch((err)=>{
+            alert("Please login first")
           })
         },
         decrement: function (product) {

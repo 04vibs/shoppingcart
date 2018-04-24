@@ -67,7 +67,7 @@
                           addToCart: function (product) {
                             console.log("Inside the add to cart method : " + product.id);
                             axios.post('http://localhost:8181/api/cart/'+product.id, {}).then((response) => alert("Product Added")
-                            ).catch((err) => alert("Already exists")
+                            ).catch((err) => alert("PLEASE LOGIN FIRST")
                             );
                           }
                         }
